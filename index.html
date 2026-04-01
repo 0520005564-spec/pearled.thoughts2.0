@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Adrina’s Secret Space</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- soft font -->
+<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+</head>
+
+<body class="pink">
+
+<canvas id="particles"></canvas>
+
+<!-- LOCK -->
+<div id="lockScreen">
+  <div class="lockBox">
+    <h2>🔒 enter password</h2>
+    <input type="password" id="passwordInput">
+    <button onclick="unlock()">unlock</button>
+    <p id="error"></p>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div id="mainContent" class="hidden">
+
+<header>
+  <h1>Adrina’s Secret Space 🎀</h1>
+</header>
+
+<!-- GRID MENU -->
+<nav class="menuGrid">
+  <div class="card" onclick="showTab('journal')">📝<span>Journal</span></div>
+  <div class="card" onclick="showTab('diary')">🔒<span>Diary</span></div>
+  <div class="card" onclick="showTab('mirror')">🪞<span>Mirror</span></div>
+  <div class="card" onclick="showTab('affirmations')">💌<span>Affirm</span></div>
+  <div class="card" onclick="showTab('info')">📖<span>Info</span></div>
+  <div class="card" onclick="toggleMusic()">🎧<span>Music</span></div>
+</nav>
+
+<!-- THEMES -->
+<div class="themes">
+  <button onclick="setTheme('pink')">💖</button>
+  <button onclick="setTheme('dark')">🌙</button>
+  <button onclick="setTheme('light')">☁️</button>
+</div>
+
+<!-- JOURNAL -->
+<section id="journal" class="tab hidden">
+  <textarea id="journalEntry" placeholder="write something soft..."></textarea>
+  <button onclick="saveJournal()">save</button>
+  <div id="entries"></div>
+</section>
+
+<!-- DIARY -->
+<section id="diary" class="tab hidden">
+  <textarea id="diaryEntry" class="blur"></textarea>
+  <button onclick="toggleDiary()">🔒 toggle lock</button>
+</section>
+
+<!-- MIRROR -->
+<section id="mirror" class="tab hidden">
+  <p id="mirrorText">click reflect</p>
+  <button onclick="mirror()">✨ reflect</button>
+</section>
+
+<!-- AFFIRMATIONS -->
+<section id="affirmations" class="tab hidden">
+  <textarea id="affirmInput" placeholder="be kind to yourself..."></textarea>
+  <button onclick="addAffirmation()">add</button>
+  <button onclick="randomAffirmation()">✨ random</button>
+
+  <div id="affirmList"></div>
+  <p id="randomAffirmBox"></p>
+</section>
+
+<!-- INFO -->
+<section id="info" class="tab hidden">
+  <p>
+    insecurities are your brain trying to protect you.  
+    noticing thoughts without believing them builds confidence.
+  </p>
+</section>
+
+<!-- MUSIC -->
+<footer>
+  <button onclick="prevSong()">⏮</button>
+  <span id="songName">no song</span>
+  <button onclick="nextSong()">⏭</button>
+</footer>
+
+</div>
+
+<audio id="music"></audio>
+
+<script src="script.js"></script>
+</body>
+  </html>
